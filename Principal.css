@@ -75,6 +75,7 @@ nav a {
     /* cian */
     text-decoration: none;
     font-weight: 500;
+    transition: all 0.3s ease-in-out;
 }
 
 nav a:hover {
@@ -100,6 +101,12 @@ article {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     border-radius: 8px;
     color: #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 
 article img {
@@ -124,6 +131,7 @@ aside {
     background: #1e293b;
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 footer {
@@ -152,7 +160,7 @@ footer {
     color: #0f172a;
     border: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 .search-form button:hover,
@@ -174,6 +182,12 @@ footer {
     display: inline-block;
     border-radius: 3px;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.tag:hover {
+    background: #60a5fa;
+    color: #fff;
 }
 
 aside h3 {
@@ -193,6 +207,7 @@ aside ul li {
 aside a {
     text-decoration: none;
     color: #60a5fa;
+    transition: all 0.3s ease-in-out;
 }
 
 aside a:hover {
@@ -222,6 +237,15 @@ aside a:hover {
 }
 
 @media (max-width: 768px) {
+    header {
+        padding: 0.5rem 0;
+    }
+
+    header h1 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
     .img-contenedor {
         width: 150px;
         height: 150px;
@@ -229,8 +253,14 @@ aside a:hover {
 
     nav ul {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        align-items: center;
+        gap: 15px;
+        /* más espacio entre enlaces */
+    }
+
+    main {
+        gap: 15px;
+        /* menos espacio en grid */
     }
 }
 
@@ -241,16 +271,16 @@ aside a:hover {
     }
 
     header h1 {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }
 
     article img {
         height: auto;
-        /* Se adapta mejor en móviles */
     }
 
     .img-contenedor {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
+        margin: 10px auto;
     }
 }
