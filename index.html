@@ -15,6 +15,10 @@
         <div class="container">
             <div class="header-content">
                 <h1>Kevin Samuel Murcia</h1>
+    
+                <!-- Botón flecha -->
+                <button class="menu-toggle">▼</button>
+    
                 <nav>
                     <ul>
                         <li><a href="#">Inicio</a></li>
@@ -22,7 +26,7 @@
                         <li><a href="#diseño">Diseño</a></li>
                         <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
                         <li><a href="#contacto">Contacto</a></li>
-                        <li><a href="Document/Codigo.web.pdf"download="Codigo_pagina.txt">PDF</a></li>
+                        <li><a href="Document/Codigo.web.pdf" download="Codigo_pagina.txt">PDF</a></li>
                         <li><a href="Document/FORMATO HOJA DE VIDA APRENDIZ SENA[1].pdf">Hoja de vida</a></li>
                     </ul>
                 </nav>
@@ -182,6 +186,16 @@
             <p>Kmurciamoreno@gmail.com</p>
         </div>
     </footer>
+
+    <script>
+        const toggleBtn = document.querySelector(".menu-toggle");
+        const menu = document.querySelector("nav ul");
+
+        toggleBtn.addEventListener("click", () => {
+            menu.classList.toggle("active");
+            toggleBtn.classList.toggle("active");
+        });
+    </script>
 </body>
 
 </html>

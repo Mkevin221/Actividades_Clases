@@ -284,3 +284,38 @@ aside a:hover {
         margin: 10px auto;
     }
 }
+
+/* Botón flecha */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #38bdf8;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Girar la flecha cuando se abre */
+.menu-toggle.active {
+    transform: rotate(180deg);
+}
+
+/* Ocultar menú por defecto en móvil */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
