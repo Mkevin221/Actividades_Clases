@@ -7,7 +7,10 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #0f172a;
+    /* gris oscuro tecnológico */
+    color: #e2e8f0;
+    /* texto claro */
 }
 
 .container {
@@ -17,8 +20,10 @@ body {
 }
 
 header {
-    background: #333;
-    color: white;
+    background: #1e293b;
+    /* gris azulado moderno */
+    color: #38bdf8;
+    /* cian brillante */
     padding: 1rem 0;
 }
 
@@ -35,25 +40,17 @@ header {
     width: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #333;
+    border: 3px solid #38bdf8;
+    /* cian brillante */
 
     grid-column: 1 / -1;
     justify-self: center;
     align-self: center;
 }
 
-#desarrollo {
-    scroll-margin-top: 100px;
-}
-
-#diseño {
-    scroll-margin-top: 100px;
-}
-
-#sobre-nosotros {
-    scroll-margin-top: 100px;
-}
-
+#desarrollo,
+#diseño,
+#sobre-nosotros,
 #contacto {
     scroll-margin-top: 100px;
 }
@@ -74,8 +71,15 @@ nav li {
 }
 
 nav a {
-    color: white;
+    color: #38bdf8;
+    /* cian */
     text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #60a5fa;
+    /* azul brillante al hover */
 }
 
 main {
@@ -90,15 +94,19 @@ main {
 }
 
 article {
-    background: white;
+    background: #1e293b;
+    /* fondo tarjetas oscuro */
     margin-bottom: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    color: #e2e8f0;
 }
 
 article img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-bottom: 2px solid #38bdf8;
 }
 
 article .content {
@@ -106,19 +114,21 @@ article .content {
 }
 
 .article-meta {
-    color: #666;
+    color: #94a3b8;
+    /* gris suave */
     font-size: 0.9em;
     margin: 10px 0;
 }
 
 aside {
-    background: #f8f9fa;
+    background: #1e293b;
     padding: 20px;
+    border-radius: 8px;
 }
 
 footer {
-    background: #333;
-    color: white;
+    background: #1e293b;
+    color: #38bdf8;
     text-align: center;
     padding: 20px 0;
 }
@@ -130,16 +140,25 @@ footer {
     width: 100%;
     padding: 8px;
     margin-bottom: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #334155;
     border-radius: 4px;
+    background: #0f172a;
+    color: #e2e8f0;
 }
 
 .search-form button,
 .newsletter button {
-    background: #007bff;
-    color: white;
+    background: #38bdf8;
+    color: #0f172a;
     border: none;
     cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-form button:hover,
+.newsletter button:hover {
+    background: #60a5fa;
+    color: white;
 }
 
 .tags {
@@ -147,8 +166,8 @@ footer {
 }
 
 .tag {
-    background: #007bff;
-    color: white;
+    background: #38bdf8;
+    color: #0f172a;
     padding: 3px 8px;
     margin: 2px;
     font-size: 0.8em;
@@ -159,6 +178,7 @@ footer {
 
 aside h3 {
     margin-bottom: 10px;
+    color: #38bdf8;
 }
 
 aside ul {
@@ -172,9 +192,65 @@ aside ul li {
 
 aside a {
     text-decoration: none;
-    color: #333;
+    color: #60a5fa;
 }
 
 aside a:hover {
     text-decoration: underline;
+    color: #38bdf8;
+}
+
+/* Diseño responsivo */
+@media (max-width: 1024px) {
+    main {
+        grid-template-columns: 1fr;
+        /* Artículos y aside en una sola columna */
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav li {
+        margin: 10px 10px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .img-contenedor {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        /* Texto más legible en móviles */
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    article img {
+        height: auto;
+        /* Se adapta mejor en móviles */
+    }
+
+    .img-contenedor {
+        width: 120px;
+        height: 120px;
+    }
 }
